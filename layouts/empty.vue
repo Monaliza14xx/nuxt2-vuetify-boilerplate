@@ -15,7 +15,7 @@
 export default {
   data(){
     return {
-      credit:"​ຄອນປະເສີດ ສຸນາເຄນ"
+      credit:"​ZOYBAD14xx"
     }
   }
 }
