@@ -2,6 +2,9 @@
 
 > Nuxt.js project with Vuetify, Firebase, GraphQL, and Apollo
 
+![Starter Image](/assets/demo.png)
+
+
 ## Build Setup
 
 ```bash
