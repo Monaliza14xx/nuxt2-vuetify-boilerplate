@@ -114,6 +114,11 @@ export default {
           icon: 'mdi-chart-bell-curve',
           title: 'ApexCharts',
           to: '/apexchart/chart',
+        },
+        {
+          icon: 'mdi-calendar',
+          title: 'Calendar',
+          to: '/calendar',
         }
       ],
       miniVariant: false,
