@@ -1,10 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
 require('dotenv').config()
 
-
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+  ssr: true,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -16,14 +15,26 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        href: 'https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js',
+      },
+      {
+        href: 'https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css',
+        rel: 'stylesheet',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vue-apexchar.js', ssr: false },
+    // { src: '~/plugins/v-calendar.js', ssr: false }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -41,11 +52,11 @@ export default {
     '@nuxt/content',
     '@nuxtjs/firebase',
     '@nuxtjs/apollo',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
   ],
 
-  router:{
-    middleware: ['auth']
+  router: {
+    middleware: ['auth'],
   },
 
   firebase: {
@@ -72,7 +83,7 @@ export default {
   },
 
   apollo: {
-    errorHandler: "~/plugins/apollo-error-handler.js",
+    errorHandler: '~/plugins/apollo-error-handler.js',
     clientConfigs: {
       default: {
         httpEndpoint: process.env.ENDPOINT_URL,
@@ -91,10 +102,6 @@ export default {
     },
   },
 
-
-
-
-
   i18n: {
     locales: ['en', 'la'],
     defaultLocale: 'en',
@@ -106,8 +113,6 @@ export default {
       },
     },
   },
-
-
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

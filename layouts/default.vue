@@ -96,10 +96,25 @@ export default {
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'mdi-map-marker',
+          title: 'Mapbox-Display-multiple',
+          to: '/mapbox/display-multiple',
         },
+        {
+          icon: 'mdi-map-marker',
+          title: 'Mapbox-Display-one',
+          to: '/mapbox/display-one',
+        },
+        {
+          icon: 'mdi-map-marker',
+          title: 'Mapbox-Marker',
+          to: '/mapbox/marker',
+        },
+        {
+          icon: 'mdi-chart-bell-curve',
+          title: 'ApexCharts',
+          to: '/apexchart/chart',
+        }
       ],
       miniVariant: false,
       right: true,
